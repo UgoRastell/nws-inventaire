@@ -95,7 +95,7 @@ class PretControllerTest extends WebTestCase
         $fixture->setDateRenduPrevue(new \DateTime());
         $fixture->setDateRenduUser(new \DateTime());
         $fixture->setStatut('My Title');
-        $fixture->setMaterielEmprunte(new ArrayCollection());
+        $fixture->setMaterielEmprunte(null);
         $fixture->setUserEmprunteur(new User());
 
         $this->manager->persist($fixture);
@@ -131,7 +131,7 @@ class PretControllerTest extends WebTestCase
         $fixture->setDateRenduPrevue(new \DateTime());
         $fixture->setDateRenduUser(new \DateTime());
         $fixture->setStatut('My Title');
-        $fixture->setMaterielEmprunte(new ArrayCollection());
+        $fixture->setMaterielEmprunte(null);
         $fixture->setUserEmprunteur(new User());
 
         $this->manager->persist($fixture);

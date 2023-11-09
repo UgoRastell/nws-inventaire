@@ -26,10 +26,12 @@ class PretController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $pret = new Pret();
+
         $form = $this->createForm(PretType::class, $pret);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $pret->setDatePret(new \DateTime());
             $entityManager->persist($pret);
             $entityManager->flush();
 

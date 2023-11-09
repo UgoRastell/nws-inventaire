@@ -45,7 +45,6 @@ class MaterielControllerTest extends WebTestCase
 
         self::assertResponseStatusCodeSame(200);
 
-        // Créez la variable $currentDateTime pour contenir la date actuelle
         $currentDateTime = new \DateTime();
 
         $this->client->submitForm('Save', [
