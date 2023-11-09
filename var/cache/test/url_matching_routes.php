@@ -12,6 +12,9 @@ return [
         '/materiel/new' => [[['_route' => 'app_materiel_new', '_controller' => 'App\\Controller\\MaterielController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/pret' => [[['_route' => 'app_pret_index', '_controller' => 'App\\Controller\\PretController::index'], null, ['GET' => 0], null, true, false, null]],
         '/pret/new' => [[['_route' => 'app_pret_new', '_controller' => 'App\\Controller\\PretController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\SecurityController::register'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

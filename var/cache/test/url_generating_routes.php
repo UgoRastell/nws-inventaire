@@ -13,4 +13,7 @@ return [
     'app_pret_show' => [['id'], ['_controller' => 'App\\Controller\\PretController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/pret']], [], [], []],
     'app_pret_edit' => [['id'], ['_controller' => 'App\\Controller\\PretController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/pret']], [], [], []],
     'app_pret_delete' => [['id'], ['_controller' => 'App\\Controller\\PretController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/pret']], [], [], []],
+    'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
+    'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\SecurityController::register'], [], [['text', '/register']], [], [], []],
 ];

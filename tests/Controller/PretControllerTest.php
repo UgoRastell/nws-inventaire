@@ -20,11 +20,13 @@ class PretControllerTest extends WebTestCase
     {
         $this->client = static::createClient();
         $this->repository = static::getContainer()->get('doctrine')->getRepository(Pret::class);
+        $this->manager = static::getContainer()->get('doctrine')->getManager();
 
         foreach ($this->repository->findAll() as $object) {
             $this->manager->remove($object);
         }
     }
+
 
     public function testIndex(): void
     {
@@ -42,29 +44,22 @@ class PretControllerTest extends WebTestCase
 
         self::assertResponseStatusCodeSame(200);
 
-        $materiels = new ArrayCollection();
-
-        $materiel1 = new Materiel();
-        $materiel2 = new Materiel();
-
-        $materiels->add($materiel1);
-        $materiels->add($materiel2);
-
-        $user = new User(); // Créez un utilisateur pour la relation OneToMany avec User
+        // Create a valid User object
+        $user = new User();
+        $user->setEmail('user@example.com'); // Set a valid email address
 
         $this->client->submitForm('Save', [
-            'pret[date_pret]' => (new \DateTime())->format('Y-m-d H:i:s'),
             'pret[date_rendu_prevue]' => (new \DateTime())->format('Y-m-d H:i:s'),
-            'pret[date_rendu_user]' => (new \DateTime())->format('Y-m-d H:i:s'),
             'pret[statut]' => 'Testing',
-            'pret[materiel_emprunte]' => $materiels,
-            'pret[user_emprunteur]' => $user,
+            'pret[materiel_emprunte]' => "",
+            'pret[user_emprunteur]' => 1,
         ]);
 
         self::assertResponseRedirects('/pret/');
 
         self::assertSame($originalNumObjectsInRepository + 1, count($this->repository->findAll()));
     }
+
 
     /*public function testShow(): void
     {
@@ -90,6 +85,9 @@ class PretControllerTest extends WebTestCase
 
     public function testEdit(): void
     {
+        $user = new User();
+        $user->setEmail('user@example.com');
+
         $fixture = new Pret();
         $fixture->setDatePret(new \DateTime());
         $fixture->setDateRenduPrevue(new \DateTime());
@@ -104,12 +102,11 @@ class PretControllerTest extends WebTestCase
         $this->client->request('GET', sprintf('%s%s/edit', $this->path, $fixture->getId()));
 
         $this->client->submitForm('Update', [
-            'pret[date_pret]' => (new \DateTime())->format('Y-m-d H:i:s'),
             'pret[date_rendu_prevue]' => (new \DateTime())->format('Y-m-d H:i:s'),
             'pret[date_rendu_user]' => (new \DateTime())->format('Y-m-d H:i:s'),
             'pret[statut]' => 'Something New',
-            'pret[materiel_emprunte]' => new ArrayCollection(),
-            'pret[user_emprunteur]' => new User(),
+            'pret[materiel_emprunte]' => "",
+            'pret[user_emprunteur]' => 1,
         ]);
 
         self::assertResponseRedirects('/pret/');
@@ -146,4 +143,3 @@ class PretControllerTest extends WebTestCase
         self::assertResponseRedirects('/pret/');
     }
 }
-
