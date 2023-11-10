@@ -25,8 +25,9 @@ class PretControllerTest extends WebTestCase
         foreach ($this->repository->findAll() as $object) {
             $this->manager->remove($object);
         }
-    }
 
+        $this->manager->flush();
+    }
 
     public function testIndex(): void
     {
