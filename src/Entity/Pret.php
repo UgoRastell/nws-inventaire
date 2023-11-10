@@ -17,7 +17,7 @@ class Pret
     #[ORM\ManyToOne(inversedBy: 'prets_')]
     private ?Materiel $materiel_emprunte = null;
 
-    #[ORM\ManyToOne(inversedBy: 'pret_')]
+    #[ORM\ManyToOne(inversedBy: 'pret_', cascade: ['persist'])]
     private ?User $user_emprunteur = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]

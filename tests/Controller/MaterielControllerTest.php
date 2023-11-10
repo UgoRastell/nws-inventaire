@@ -24,7 +24,10 @@ class MaterielControllerTest extends WebTestCase
         foreach ($this->repository->findAll() as $object) {
             $this->manager->remove($object);
         }
+
+        $this->manager->flush();
     }
+
 
 
     public function testIndex(): void
@@ -128,7 +131,6 @@ class MaterielControllerTest extends WebTestCase
 
         $this->manager->persist($fixture);
         $this->manager->flush();
-
         self::assertSame($originalNumObjectsInRepository + 1, count($this->repository->findAll()));
 
         $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
