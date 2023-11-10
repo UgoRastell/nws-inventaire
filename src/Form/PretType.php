@@ -3,10 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Pret;
+use App\Entity\Materiel; // Don't forget to import the Materiel entity
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType; // Import EntityType
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class PretType extends AbstractType
@@ -20,7 +22,13 @@ class PretType extends AbstractType
             ])
             //->add('date_rendu_user')
             ->add('statut')
-            ->add('materiel_emprunte')
+            ->add('materiel_emprunte', EntityType::class, [
+                'class' => Materiel::class,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('m')
+                        ->where('m.quantity > 0'); // Exclude materials with zero quantity
+                },
+            ])
             ->add('user_emprunteur');
     }
 

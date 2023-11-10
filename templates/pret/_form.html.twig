@@ -1,4 +1,47 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+<div class="row">
+	<div class="col-md-6">
+		{{ form_row(form.date_rendu_prevue, {
+                'attr': {
+                    'class': 'form-control',
+                }
+            }) }}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		{{ form_row(form.statut, {
+                'attr': {
+                    'class': 'form-control',
+                }
+            }) }}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		{{ form_row(form.materiel_emprunte, {
+                'attr': {
+                    'class': 'form-control',
+                }
+            }) }}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		{{ form_row(form.user_emprunteur, {
+                'attr': {
+                    'class': 'form-control',
+                }
+            }) }}
+	</div>
+</div>
+
+<div class="row mt-3">
+	<div class="col-md-6">
+		<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+	</div>
+</div>
 {{ form_end(form) }}

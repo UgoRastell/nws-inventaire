@@ -346,6 +346,7 @@
     <service id="App\Controller\PretController" class="App\Controller\PretController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.CshazM0.App\Controller\PretController"/>
       </call>
@@ -381,6 +382,7 @@
     <service id="App\Security\LoginFormAuthenticator" class="App\Security\LoginFormAuthenticator" autowire="true" autoconfigure="true">
       <argument type="service" id="router.default"/>
     </service>
+    <service id="App\Service\MailService" class="App\Service\MailService" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="response_listener" class="Symfony\Component\HttpKernel\EventListener\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -6911,10 +6913,11 @@
         <argument key="pretRepository" type="service_closure" id="App\Repository\PretRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.BxOkYWF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.wdczQ9j" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="pret" type="service_closure" id=".errored..service_locator.BxOkYWF.App\Entity\Pret"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="mailService" type="service_closure" id="App\Service\MailService"/>
       </argument>
     </service>
     <service id=".service_locator.gRepg0e" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6922,6 +6925,19 @@
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
         <argument key="pret" type="service_closure" id=".errored..service_locator.gRepg0e.App\Entity\Pret"/>
+      </argument>
+    </service>
+    <service id=".service_locator.BxOkYWF" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="pret" type="service_closure" id=".errored..service_locator.BxOkYWF.App\Entity\Pret"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Im7TWv0" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="mailService" type="service_closure" id="App\Service\MailService"/>
+        <argument key="pret" type="service_closure" id=".errored..service_locator.Im7TWv0.App\Entity\Pret"/>
       </argument>
     </service>
     <service id=".service_locator.rSTd.nA" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6937,7 +6953,7 @@
         <argument key="userPasswordHasher" type="service_closure" id="security.user_password_hasher"/>
       </argument>
     </service>
-    <service id=".service_locator.8LPgQeO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.3rtlIs4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\MaterielController::delete" type="service_closure" id=".service_locator.NgvlNzc"/>
@@ -6948,8 +6964,10 @@
         <argument key="App\Controller\PretController::delete" type="service_closure" id=".service_locator.gRepg0e"/>
         <argument key="App\Controller\PretController::edit" type="service_closure" id=".service_locator.gRepg0e"/>
         <argument key="App\Controller\PretController::index" type="service_closure" id=".service_locator.C9pW7V3"/>
-        <argument key="App\Controller\PretController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\PretController::show" type="service_closure" id=".service_locator.BxOkYWF"/>
+        <argument key="App\Controller\PretController::new" type="service_closure" id=".service_locator.wdczQ9j"/>
+        <argument key="App\Controller\PretController::rappelePret" type="service_closure" id=".service_locator.Im7TWv0"/>
+        <argument key="App\Controller\PretController::rendrePret" type="service_closure" id=".service_locator.BxOkYWF"/>
+        <argument key="App\Controller\PretController::show" type="service_closure" id=".service_locator.C9pW7V3"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.rSTd.nA"/>
         <argument key="App\Controller\SecurityController::register" type="service_closure" id=".service_locator.e_4zbH4"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -6964,8 +6982,10 @@
         <argument key="App\Controller\PretController:delete" type="service_closure" id=".service_locator.gRepg0e"/>
         <argument key="App\Controller\PretController:edit" type="service_closure" id=".service_locator.gRepg0e"/>
         <argument key="App\Controller\PretController:index" type="service_closure" id=".service_locator.C9pW7V3"/>
-        <argument key="App\Controller\PretController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\PretController:show" type="service_closure" id=".service_locator.BxOkYWF"/>
+        <argument key="App\Controller\PretController:new" type="service_closure" id=".service_locator.wdczQ9j"/>
+        <argument key="App\Controller\PretController:rappelePret" type="service_closure" id=".service_locator.Im7TWv0"/>
+        <argument key="App\Controller\PretController:rendrePret" type="service_closure" id=".service_locator.BxOkYWF"/>
+        <argument key="App\Controller\PretController:show" type="service_closure" id=".service_locator.C9pW7V3"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.rSTd.nA"/>
         <argument key="App\Controller\SecurityController:register" type="service_closure" id=".service_locator.e_4zbH4"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -7806,12 +7826,12 @@
     <service id="debug.argument_resolver.request.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver"/>
     <service id="debug.argument_resolver.session.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver"/>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.8LPgQeO"/>
+      <argument type="service" id=".service_locator.3rtlIs4"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.8LPgQeO"/>
+      <argument type="service" id=".service_locator.3rtlIs4"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -7833,8 +7853,9 @@
     <service id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
     <service id=".errored..service_locator.9rl2zkG.App\Entity\Materiel" class="App\Entity\Materiel"/>
     <service id=".errored..service_locator.NgvlNzc.App\Entity\Materiel" class="App\Entity\Materiel"/>
-    <service id=".errored..service_locator.BxOkYWF.App\Entity\Pret" class="App\Entity\Pret"/>
     <service id=".errored..service_locator.gRepg0e.App\Entity\Pret" class="App\Entity\Pret"/>
+    <service id=".errored..service_locator.BxOkYWF.App\Entity\Pret" class="App\Entity\Pret"/>
+    <service id=".errored..service_locator.Im7TWv0.App\Entity\Pret" class="App\Entity\Pret"/>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
       <argument type="collection"/>
@@ -8788,7 +8809,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.8LPgQeO"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.3rtlIs4"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8811,8 +8832,9 @@
     <service id=".service_locator.o.uf2zi" alias=".service_locator.7nzbL4K"/>
     <service id=".service_locator.EETwEHG" alias=".service_locator.NgvlNzc"/>
     <service id=".service_locator._WVi2C1" alias=".service_locator.gRepg0e"/>
+    <service id=".service_locator.41T4mkx" alias=".service_locator.Im7TWv0"/>
     <service id=".service_locator.V6D1oJY" alias=".service_locator.e_4zbH4"/>
-    <service id=".service_locator.5QIu3dn" alias=".service_locator.8LPgQeO"/>
+    <service id=".service_locator.o2JdP7c" alias=".service_locator.3rtlIs4"/>
     <service id=".service_locator.9XMoc9I" alias=".service_locator.kzegaci"/>
     <service id=".service_locator.9gB4Q6y" alias=".service_locator.MWHGWUJ"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
@@ -8868,8 +8890,10 @@
     <service id=".service_locator.vv7mSEw" alias=".service_locator.9rl2zkG"/>
     <service id=".service_locator.sZiCqRZ" alias=".service_locator.NgvlNzc"/>
     <service id=".service_locator.mFRw9hJ" alias=".service_locator.C9pW7V3"/>
-    <service id=".service_locator.JnAXemV" alias=".service_locator.BxOkYWF"/>
+    <service id=".service_locator.QKKdO5l" alias=".service_locator.wdczQ9j"/>
     <service id=".service_locator.xCmaF7x" alias=".service_locator.gRepg0e"/>
+    <service id=".service_locator.JnAXemV" alias=".service_locator.BxOkYWF"/>
+    <service id=".service_locator.5qBb8oI" alias=".service_locator.Im7TWv0"/>
     <service id=".service_locator.7NIAq8D" alias=".service_locator.rSTd.nA"/>
     <service id=".service_locator.qnm_CJ1" alias=".service_locator.e_4zbH4"/>
     <service id=".service_locator.Kyflpr1" alias=".service_locator.CshazM0"/>

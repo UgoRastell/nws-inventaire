@@ -19,7 +19,7 @@ class MaterielControllerTest extends WebTestCase
     {
         $this->client = static::createClient();
         $this->repository = static::getContainer()->get('doctrine')->getRepository(Materiel::class);
-        $this->manager = static::getContainer()->get('doctrine')->getManager(); // Initialize the $manager property
+        $this->manager = static::getContainer()->get('doctrine')->getManager();
 
         foreach ($this->repository->findAll() as $object) {
             $this->manager->remove($object);

@@ -108,4 +108,16 @@ class Pret
 
         return $this;
     }
+
+    public function returnMateriel(): void
+    {
+        $materiel = $this->getMaterielEmprunte();
+
+        if ($materiel) {
+            $materiel->setQuantity($materiel->getQuantity() + 1);
+        }
+
+        $this->setDateRenduUser(new \DateTime());
+        $this->setStatut('Rendu');
+    }
 }
