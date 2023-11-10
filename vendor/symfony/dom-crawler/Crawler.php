@@ -281,9 +281,7 @@ class Crawler implements \Countable, \IteratorAggregate
             throw new \InvalidArgumentException('Attaching DOM nodes from multiple documents in the same crawler is forbidden.');
         }
 
-        if (null === $this->document) {
-            $this->document = $node->ownerDocument;
-        }
+        $this->document ??= $node->ownerDocument;
 
         // Don't add duplicate nodes in the Crawler
         if (\in_array($node, $this->nodes, true)) {
@@ -700,7 +698,7 @@ class Crawler implements \Countable, \IteratorAggregate
      *
      * This method only works if you have installed the CssSelector Symfony Component.
      *
-     * @throws \RuntimeException if the CssSelector Component is not available
+     * @throws \LogicException if the CssSelector Component is not available
      */
     public function filter(string $selector): static
     {

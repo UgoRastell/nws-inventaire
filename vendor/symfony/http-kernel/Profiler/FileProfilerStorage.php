@@ -42,9 +42,6 @@ class FileProfilerStorage implements ProfilerStorageInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function find(?string $ip, ?string $url, ?int $limit, ?string $method, int $start = null, int $end = null, string $statusCode = null): array
     {
         $file = $this->getIndexFilename();
@@ -59,6 +56,12 @@ class FileProfilerStorage implements ProfilerStorageInterface
         $result = [];
         while (\count($result) < $limit && $line = $this->readLineFromFile($file)) {
             $values = str_getcsv($line);
+
+            if (7 !== \count($values)) {
+                // skip invalid lines
+                continue;
+            }
+
             [$csvToken, $csvIp, $csvMethod, $csvUrl, $csvTime, $csvParent, $csvStatusCode] = $values;
             $csvTime = (int) $csvTime;
 
@@ -90,9 +93,6 @@ class FileProfilerStorage implements ProfilerStorageInterface
         return array_values($result);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function purge()
     {
         $flags = \FilesystemIterator::SKIP_DOTS;
@@ -108,17 +108,12 @@ class FileProfilerStorage implements ProfilerStorageInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function read(string $token): ?Profile
     {
         return $this->doRead($token);
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @throws \RuntimeException
      */
     public function write(Profile $profile): bool
