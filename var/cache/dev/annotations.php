@@ -82,6 +82,8 @@ return [[
 '[C]App%5CEntity%5CMateriel' => 1,
 'App%5CEntity%5CMateriel%23__construct' => 0,
 '[C]App%5CEntity%5CMateriel%23__construct' => 1,
+'App%5CEntity%5CMateriel%23__toString' => 0,
+'[C]App%5CEntity%5CMateriel%23__toString' => 1,
 'App%5CEntity%5CMateriel%23getId' => 0,
 '[C]App%5CEntity%5CMateriel%23getId' => 1,
 'App%5CEntity%5CMateriel%23getNom' => 0,
@@ -170,6 +172,8 @@ return [[
 '[C]App%5CEntity%5CUser' => 1,
 'App%5CEntity%5CUser%23__construct' => 0,
 '[C]App%5CEntity%5CUser%23__construct' => 1,
+'App%5CEntity%5CUser%23__toString' => 0,
+'[C]App%5CEntity%5CUser%23__toString' => 1,
 'App%5CEntity%5CUser%23getId' => 0,
 '[C]App%5CEntity%5CUser%23getId' => 1,
 'App%5CEntity%5CUser%23getEmail' => 0,
@@ -754,6 +758,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1699454793,
+1 => 1699811829,
 
 ]];
