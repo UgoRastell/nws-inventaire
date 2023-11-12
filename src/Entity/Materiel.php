@@ -36,6 +36,7 @@ class Materiel
 
     public function __construct()
     {
+        $this->date_ajout = new \DateTime();
         $this->prets_ = new ArrayCollection();
     }
 

@@ -14,6 +14,7 @@ namespace Symfony\Bundle\DebugBundle\DependencyInjection;
 use Symfony\Bridge\Monolog\Command\ServerLogCommand;
 use Symfony\Bundle\DebugBundle\Command\ServerDumpPlaceholderCommand;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
@@ -29,9 +30,6 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
  */
 class DebugExtension extends Extension
 {
-    /**
-     * {@inheritdoc}
-     */
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
@@ -92,22 +90,16 @@ class DebugExtension extends Extension
             ;
         }
 
-        if (!class_exists(ServerLogCommand::class)) {
+        if (!class_exists(Command::class) || !class_exists(ServerLogCommand::class)) {
             $container->removeDefinition('monolog.command.server_log');
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getXsdValidationBasePath(): string|false
     {
         return __DIR__.'/../Resources/config/schema';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getNamespace(): string
     {
         return 'http://symfony.com/schema/dic/debug';

@@ -247,7 +247,7 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
         // line 74
         if (twig_test_empty(twig_get_attribute($this->env, $this->source, (isset($context["collector"]) || array_key_exists("collector", $context) ? $context["collector"] : (function () { throw new RuntimeError('Variable "collector" does not exist.', 74, $this->source); })()), "messages", [], "any", false, false, false, 74))) {
             // line 75
-            echo "        <div class=\"empty\">
+            echo "        <div class=\"empty empty-panel\">
             <p>No translations have been called.</p>
         </div>
     ";
@@ -255,10 +255,10 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
             // line 79
             echo "        ";
             $this->displayBlock('messages', $context, $blocks);
-            // line 161
+            // line 159
             echo "    ";
         }
-        // line 162
+        // line 160
         echo "
 ";
         
@@ -424,8 +424,6 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
             </div>
         </div>
 
-        <script>Sfjs.createFilters();</script>
-
         ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -504,7 +502,7 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
 
     }
 
-    // line 165
+    // line 163
     public function macro_render_table($__messages__ = null, $__is_fallback__ = null, ...$__varargs__)
     {
         $macros = $this->macros;
@@ -524,20 +522,20 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
             $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
             $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "render_table"));
 
-            // line 166
-            echo "    <table data-filters>
+            // line 164
+            echo "    <table>
         <thead>
             <tr>
-                <th data-filter=\"locale\">Locale</th>
+                <th>Locale</th>
                 ";
-            // line 170
-            if ((isset($context["is_fallback"]) || array_key_exists("is_fallback", $context) ? $context["is_fallback"] : (function () { throw new RuntimeError('Variable "is_fallback" does not exist.', 170, $this->source); })())) {
-                // line 171
+            // line 168
+            if ((isset($context["is_fallback"]) || array_key_exists("is_fallback", $context) ? $context["is_fallback"] : (function () { throw new RuntimeError('Variable "is_fallback" does not exist.', 168, $this->source); })())) {
+                // line 169
                 echo "                    <th>Fallback locale</th>
                 ";
             }
-            // line 173
-            echo "                <th data-filter=\"domain\">Domain</th>
+            // line 171
+            echo "                <th>Domain</th>
                 <th>Times used</th>
                 <th>Message ID</th>
                 <th>Message Preview</th>
@@ -545,9 +543,9 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
         </thead>
         <tbody>
         ";
-            // line 180
+            // line 178
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["messages"]) || array_key_exists("messages", $context) ? $context["messages"] : (function () { throw new RuntimeError('Variable "messages" does not exist.', 180, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["messages"]) || array_key_exists("messages", $context) ? $context["messages"] : (function () { throw new RuntimeError('Variable "messages" does not exist.', 178, $this->source); })()));
             $context['loop'] = [
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -562,66 +560,64 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
                 $context['loop']['last'] = 1 === $length;
             }
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 181
-                echo "            <tr data-filter-locale=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "locale", [], "any", false, false, false, 181), "html", null, true);
-                echo "\" data-filter-domain=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "domain", [], "any", false, false, false, 181), "html", null, true);
-                echo "\">
+                // line 179
+                echo "            <tr>
                 <td class=\"font-normal text-small nowrap\">";
-                // line 182
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "locale", [], "any", false, false, false, 182), "html", null, true);
+                // line 180
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "locale", [], "any", false, false, false, 180), "html", null, true);
                 echo "</td>
                 ";
-                // line 183
-                if ((isset($context["is_fallback"]) || array_key_exists("is_fallback", $context) ? $context["is_fallback"] : (function () { throw new RuntimeError('Variable "is_fallback" does not exist.', 183, $this->source); })())) {
-                    // line 184
+                // line 181
+                if ((isset($context["is_fallback"]) || array_key_exists("is_fallback", $context) ? $context["is_fallback"] : (function () { throw new RuntimeError('Variable "is_fallback" does not exist.', 181, $this->source); })())) {
+                    // line 182
                     echo "                    <td class=\"font-normal text-small nowrap\">";
-                    echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["message"], "fallbackLocale", [], "any", true, true, false, 184)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["message"], "fallbackLocale", [], "any", false, false, false, 184), "-")) : ("-")), "html", null, true);
+                    echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["message"], "fallbackLocale", [], "any", true, true, false, 182)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, $context["message"], "fallbackLocale", [], "any", false, false, false, 182), "-")) : ("-")), "html", null, true);
                     echo "</td>
                 ";
                 }
-                // line 186
+                // line 184
                 echo "                <td class=\"font-normal text-small text-bold nowrap\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "domain", [], "any", false, false, false, 186), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "domain", [], "any", false, false, false, 184), "html", null, true);
                 echo "</td>
                 <td class=\"font-normal text-small nowrap\">";
-                // line 187
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "count", [], "any", false, false, false, 187), "html", null, true);
+                // line 185
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "count", [], "any", false, false, false, 185), "html", null, true);
                 echo "</td>
                 <td>
-                    <span class=\"nowrap\">";
-                // line 189
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 189), "html", null, true);
+                    <span class=\"";
+                // line 187
+                echo (((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 187)) < 64)) ? ("nowrap") : (""));
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "id", [], "any", false, false, false, 187), "html", null, true);
                 echo "</span>
 
                     ";
-                // line 191
-                if ( !(null === twig_get_attribute($this->env, $this->source, $context["message"], "transChoiceNumber", [], "any", false, false, false, 191))) {
-                    // line 192
+                // line 189
+                if ( !(null === twig_get_attribute($this->env, $this->source, $context["message"], "transChoiceNumber", [], "any", false, false, false, 189))) {
+                    // line 190
                     echo "                        <small class=\"newline\">(pluralization is used)</small>
                     ";
                 }
-                // line 194
+                // line 192
                 echo "
                     ";
-                // line 195
-                if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "parameters", [], "any", false, false, false, 195)) > 0)) {
-                    // line 196
+                // line 193
+                if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "parameters", [], "any", false, false, false, 193)) > 0)) {
+                    // line 194
                     echo "                        <button class=\"btn-link newline text-small sf-toggle\" data-toggle-selector=\"#parameters-";
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 196), "html", null, true);
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 194), "html", null, true);
                     echo "\" data-toggle-alt-content=\"Hide parameters\">Show parameters</button>
 
                         <div id=\"parameters-";
-                    // line 198
-                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 198), "html", null, true);
+                    // line 196
+                    echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["loop"], "index", [], "any", false, false, false, 196), "html", null, true);
                     echo "\" class=\"hidden\">
                             ";
-                    // line 199
+                    // line 197
                     $context['_parent'] = $context;
-                    $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["message"], "parameters", [], "any", false, false, false, 199));
+                    $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["message"], "parameters", [], "any", false, false, false, 197));
                     foreach ($context['_seq'] as $context["_key"] => $context["parameters"]) {
-                        // line 200
+                        // line 198
                         echo "                                ";
                         echo $this->extensions['Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension']->dumpData($this->env, $context["parameters"], 1);
                         echo "
@@ -630,15 +626,15 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
                     $_parent = $context['_parent'];
                     unset($context['_seq'], $context['_iterated'], $context['_key'], $context['parameters'], $context['_parent'], $context['loop']);
                     $context = array_intersect_key($context, $_parent) + $_parent;
-                    // line 202
+                    // line 200
                     echo "                        </div>
                     ";
                 }
-                // line 204
+                // line 202
                 echo "                </td>
                 <td class=\"prewrap\">";
-                // line 205
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "translation", [], "any", false, false, false, 205), "html", null, true);
+                // line 203
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["message"], "translation", [], "any", false, false, false, 203), "html", null, true);
                 echo "</td>
             </tr>
         ";
@@ -654,7 +650,7 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 208
+            // line 206
             echo "        </tbody>
     </table>
 ";
@@ -683,7 +679,7 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
 
     public function getDebugInfo()
     {
-        return array (  658 => 208,  641 => 205,  638 => 204,  634 => 202,  625 => 200,  621 => 199,  617 => 198,  611 => 196,  609 => 195,  606 => 194,  602 => 192,  600 => 191,  595 => 189,  590 => 187,  585 => 186,  579 => 184,  577 => 183,  573 => 182,  566 => 181,  549 => 180,  540 => 173,  536 => 171,  534 => 170,  528 => 166,  508 => 165,  495 => 151,  485 => 150,  472 => 129,  462 => 128,  449 => 108,  439 => 107,  423 => 154,  420 => 153,  417 => 150,  411 => 146,  409 => 145,  395 => 136,  391 => 135,  386 => 132,  383 => 131,  380 => 128,  374 => 124,  372 => 123,  359 => 115,  353 => 111,  350 => 110,  347 => 107,  341 => 103,  339 => 102,  329 => 95,  325 => 94,  321 => 92,  315 => 91,  312 => 90,  309 => 89,  306 => 88,  303 => 87,  300 => 86,  297 => 85,  294 => 84,  289 => 83,  286 => 82,  283 => 80,  273 => 79,  262 => 162,  259 => 161,  256 => 79,  250 => 75,  248 => 74,  239 => 68,  235 => 67,  228 => 63,  222 => 59,  212 => 58,  201 => 55,  195 => 52,  192 => 51,  189 => 50,  187 => 49,  182 => 47,  175 => 46,  165 => 45,  152 => 41,  149 => 40,  143 => 37,  134 => 31,  130 => 30,  121 => 24,  117 => 23,  109 => 18,  104 => 15,  102 => 14,  99 => 13,  93 => 11,  90 => 10,  88 => 9,  83 => 8,  80 => 7,  77 => 6,  67 => 5,  56 => 1,  54 => 3,  41 => 1,);
+        return array (  654 => 206,  637 => 203,  634 => 202,  630 => 200,  621 => 198,  617 => 197,  613 => 196,  607 => 194,  605 => 193,  602 => 192,  598 => 190,  596 => 189,  589 => 187,  584 => 185,  579 => 184,  573 => 182,  571 => 181,  567 => 180,  564 => 179,  547 => 178,  538 => 171,  534 => 169,  532 => 168,  526 => 164,  506 => 163,  493 => 151,  483 => 150,  470 => 129,  460 => 128,  447 => 108,  437 => 107,  423 => 154,  420 => 153,  417 => 150,  411 => 146,  409 => 145,  395 => 136,  391 => 135,  386 => 132,  383 => 131,  380 => 128,  374 => 124,  372 => 123,  359 => 115,  353 => 111,  350 => 110,  347 => 107,  341 => 103,  339 => 102,  329 => 95,  325 => 94,  321 => 92,  315 => 91,  312 => 90,  309 => 89,  306 => 88,  303 => 87,  300 => 86,  297 => 85,  294 => 84,  289 => 83,  286 => 82,  283 => 80,  273 => 79,  262 => 160,  259 => 159,  256 => 79,  250 => 75,  248 => 74,  239 => 68,  235 => 67,  228 => 63,  222 => 59,  212 => 58,  201 => 55,  195 => 52,  192 => 51,  189 => 50,  187 => 49,  182 => 47,  175 => 46,  165 => 45,  152 => 41,  149 => 40,  143 => 37,  134 => 31,  130 => 30,  121 => 24,  117 => 23,  109 => 18,  104 => 15,  102 => 14,  99 => 13,  93 => 11,  90 => 10,  88 => 9,  83 => 8,  80 => 7,  77 => 6,  67 => 5,  56 => 1,  54 => 3,  41 => 1,);
     }
 
     public function getSourceContext()
@@ -762,7 +758,7 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
     <h2>Messages</h2>
 
     {% if collector.messages is empty %}
-        <div class=\"empty\">
+        <div class=\"empty empty-panel\">
             <p>No translations have been called.</p>
         </div>
     {% else %}
@@ -845,22 +841,20 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
             </div>
         </div>
 
-        <script>Sfjs.createFilters();</script>
-
         {% endblock messages %}
     {% endif %}
 
 {% endblock %}
 
 {% macro render_table(messages, is_fallback) %}
-    <table data-filters>
+    <table>
         <thead>
             <tr>
-                <th data-filter=\"locale\">Locale</th>
+                <th>Locale</th>
                 {% if is_fallback %}
                     <th>Fallback locale</th>
                 {% endif %}
-                <th data-filter=\"domain\">Domain</th>
+                <th>Domain</th>
                 <th>Times used</th>
                 <th>Message ID</th>
                 <th>Message Preview</th>
@@ -868,7 +862,7 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
         </thead>
         <tbody>
         {% for message in messages %}
-            <tr data-filter-locale=\"{{ message.locale }}\" data-filter-domain=\"{{ message.domain }}\">
+            <tr>
                 <td class=\"font-normal text-small nowrap\">{{ message.locale }}</td>
                 {% if is_fallback %}
                     <td class=\"font-normal text-small nowrap\">{{ message.fallbackLocale|default('-') }}</td>
@@ -876,7 +870,7 @@ class __TwigTemplate_1ee172d005497eb65198780979c08744 extends Template
                 <td class=\"font-normal text-small text-bold nowrap\">{{ message.domain }}</td>
                 <td class=\"font-normal text-small nowrap\">{{ message.count }}</td>
                 <td>
-                    <span class=\"nowrap\">{{ message.id }}</span>
+                    <span class=\"{{ message.id|length < 64 ? 'nowrap' }}\">{{ message.id }}</span>
 
                     {% if message.transChoiceNumber is not null %}
                         <small class=\"newline\">(pluralization is used)</small>

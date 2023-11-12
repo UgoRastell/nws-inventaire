@@ -17,7 +17,7 @@ class Pret
     #[ORM\ManyToOne(inversedBy: 'prets_')]
     private ?Materiel $materiel_emprunte = null;
 
-    #[ORM\ManyToOne(inversedBy: 'pret_')]
+    #[ORM\ManyToOne(inversedBy: 'pret_', cascade: ['persist'])]
     private ?User $user_emprunteur = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
@@ -31,6 +31,8 @@ class Pret
 
     #[ORM\Column(length: 255)]
     private ?string $statut = null;
+
+
 
     public function getId(): ?int
     {
@@ -107,5 +109,17 @@ class Pret
         $this->statut = $statut;
 
         return $this;
+    }
+
+    public function returnMateriel(): void
+    {
+        $materiel = $this->getMaterielEmprunte();
+
+        if ($materiel) {
+            $materiel->setQuantity($materiel->getQuantity() + 1);
+        }
+
+        $this->setDateRenduUser(new \DateTime());
+        $this->setStatut('Rendu');
     }
 }

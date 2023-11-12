@@ -1,43 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Materiel index{% endblock %}
+{% block title %}Materiel index
+{% endblock %}
 
 {% block body %}
-    <h1>Materiel index</h1>
+	<h1>Materiel index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Quantity</th>
-                <th>Date_ajout</th>
-                <th>Etat</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for materiel in materiels %}
-            <tr>
-                <td>{{ materiel.id }}</td>
-                <td>{{ materiel.nom }}</td>
-                <td>{{ materiel.description }}</td>
-                <td>{{ materiel.quantity }}</td>
-                <td>{{ materiel.dateAjout ? materiel.dateAjout|date('Y-m-d') : '' }}</td>
-                <td>{{ materiel.etat }}</td>
-                <td>
-                    <a href="{{ path('app_materiel_show', {'id': materiel.id}) }}">show</a>
-                    <a href="{{ path('app_materiel_edit', {'id': materiel.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">Nom</th>
+				<th scope="col">Description</th>
+				<th scope="col">Quantity</th>
+				<th scope="col">Date Ajout</th>
+				<th scope="col">Etat</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for materiel in materiels %}
+				<tr>
+					<td>{{ materiel.id }}</td>
+					<td>{{ materiel.nom }}</td>
+					<td>{{ materiel.description }}</td>
+					<td>{{ materiel.quantity }}</td>
+					<td>{{ materiel.dateAjout ? materiel.dateAjout|date('Y-m-d') : '' }}</td>
+					<td>{{ materiel.etat }}</td>
+					<td>
+						<a href="{{ path('app_materiel_show', {'id': materiel.id}) }}" class="btn btn-info btn-sm">Show</a>
+						<a href="{{ path('app_materiel_edit', {'id': materiel.id}) }}" class="btn btn-warning btn-sm">Edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="7">No records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-    <a href="{{ path('app_materiel_new') }}">Create new</a>
+	<a href="{{ path('app_materiel_new') }}" class="btn btn-primary">Create new</a>
 {% endblock %}

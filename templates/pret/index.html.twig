@@ -1,41 +1,46 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Pret index{% endblock %}
-
 {% block body %}
-    <h1>Pret index</h1>
+	<h1 class="mt-4 mb-4">Pret index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Date_pret</th>
-                <th>Date_rendu_prevue</th>
-                <th>Date_rendu_user</th>
-                <th>Statut</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for pret in prets %}
-            <tr>
-                <td>{{ pret.id }}</td>
-                <td>{{ pret.datePret ? pret.datePret|date('Y-m-d') : '' }}</td>
-                <td>{{ pret.dateRenduPrevue ? pret.dateRenduPrevue|date('Y-m-d') : '' }}</td>
-                <td>{{ pret.dateRenduUser ? pret.dateRenduUser|date('Y-m-d') : '' }}</td>
-                <td>{{ pret.statut }}</td>
-                <td>
-                    <a href="{{ path('app_pret_show', {'id': pret.id}) }}">show</a>
-                    <a href="{{ path('app_pret_edit', {'id': pret.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">Materiel Emprunte</th>
+				<th scope="col">Date_pret</th>
+				<th scope="col">Date_rendu_prevue</th>
+				<th scope="col">Date_rendu_user</th>
+				<th scope="col">Statut</th>
+				<th scope="col">Propriétaire</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for pret in prets %}
+				<tr>
+					<td>{{ pret.getMaterielEmprunte().nom }}</td>
+					{# Assuming 'nom' is the property of Materiel that you want to display #}
+					<td>{{ pret.datePret ? pret.datePret|date('Y-m-d') : '' }}</td>
+					<td>{{ pret.dateRenduPrevue ? pret.dateRenduPrevue|date('Y-m-d') : '' }}</td>
+					<td>{{ pret.dateRenduUser ? pret.dateRenduUser|date('Y-m-d') : '' }}</td>
+					<td>{{ pret.statut }}</td>
+					<td>{{ pret.getUserEmprunteur().email }}</td>
+					<td>
+						<a href="{{ path('app_pret_show', {'id': pret.id}) }}" class="btn btn-info btn-sm">Show</a>
+						<a href="{{ path('app_pret_edit', {'id': pret.id}) }}" class="btn btn-warning btn-sm">Edit</a>
+						{% if pret.dateRenduUser is null %}
+							<a href="{{ path('app_pret_rendu', {'id': pret.id}) }}" class="btn btn-warning btn-sm">Rendu</a>
+							<a href="{{ path('app_pret_rappele', {'id': pret.id}) }}" class="btn btn-warning btn-sm">Rappel</a>
+						{% endif %}
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="8">No records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 
-    <a href="{{ path('app_pret_new') }}">Create new</a>
+	<a href="{{ path('app_pret_new') }}" class="btn btn-primary">Create new</a>
 {% endblock %}

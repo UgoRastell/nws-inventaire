@@ -19,12 +19,15 @@ class MaterielControllerTest extends WebTestCase
     {
         $this->client = static::createClient();
         $this->repository = static::getContainer()->get('doctrine')->getRepository(Materiel::class);
-        $this->manager = static::getContainer()->get('doctrine')->getManager(); // Initialize the $manager property
+        $this->manager = static::getContainer()->get('doctrine')->getManager();
 
         foreach ($this->repository->findAll() as $object) {
             $this->manager->remove($object);
         }
+
+        $this->manager->flush();
     }
+
 
 
     public function testIndex(): void
@@ -128,7 +131,6 @@ class MaterielControllerTest extends WebTestCase
 
         $this->manager->persist($fixture);
         $this->manager->flush();
-
         self::assertSame($originalNumObjectsInRepository + 1, count($this->repository->findAll()));
 
         $this->client->request('GET', sprintf('%s%s', $this->path, $fixture->getId()));
