@@ -235,6 +235,6 @@ class __TwigTemplate_983d984dfe8635fb6392b6f4bcf42996 extends Template
 \t<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL\" crossorigin=\"anonymous\"></script>
 
 </html>
-", "base.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\base.html.twig");
     }
 }

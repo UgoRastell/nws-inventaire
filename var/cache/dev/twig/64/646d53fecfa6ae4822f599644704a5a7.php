@@ -482,6 +482,6 @@ class __TwigTemplate_7a702b9f879030cc9142df4c6d453a47 extends Template
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\events.html.twig");
     }
 }

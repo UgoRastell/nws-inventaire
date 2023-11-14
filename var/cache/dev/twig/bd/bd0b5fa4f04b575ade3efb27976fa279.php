@@ -869,6 +869,6 @@ class __TwigTemplate_0007bc6a149a26001fbc43fc603744d8 extends Template
         </table>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/config.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\config.html.twig");
+", "@WebProfiler/Collector/config.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\config.html.twig");
     }
 }
