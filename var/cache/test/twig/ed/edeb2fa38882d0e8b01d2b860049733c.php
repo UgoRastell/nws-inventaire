@@ -235,6 +235,6 @@ class __TwigTemplate_c5e644a01509984b282d5dfefd787ec9 extends Template
 
 \t<a href=\"{{ path('app_materiel_new') }}\" class=\"btn btn-primary\">Create new</a>
 {% endblock %}
-", "materiel/index.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\materiel\\index.html.twig");
+", "materiel/index.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\materiel\\index.html.twig");
     }
 }

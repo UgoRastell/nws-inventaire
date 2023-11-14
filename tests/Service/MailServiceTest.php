@@ -5,7 +5,6 @@ namespace App\Tests\Service;
 use App\Service\MailService;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mailer\Transport\TransportInterface;
-use Symfony\Component\Mime\Email;
 
 class MailServiceTest extends TestCase
 {

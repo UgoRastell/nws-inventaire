@@ -133,6 +133,6 @@ class __TwigTemplate_0520d773d3ce090f637a5f86b3834ae2 extends Template
 
     <a href=\"{{ path('app_pret_index') }}\">back to list</a>
 {% endblock %}
-", "pret/new.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\pret\\new.html.twig");
+", "pret/new.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\pret\\new.html.twig");
     }
 }

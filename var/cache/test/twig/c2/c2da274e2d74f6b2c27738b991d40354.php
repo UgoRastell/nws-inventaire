@@ -58,7 +58,7 @@ class __TwigTemplate_e5f69f8edc58cf68a0dc36c0020a1168 extends Template
 \t\t\t\t\t<a class=\"nav-link\" href=\"";
         // line 13
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_pret_index");
-        echo "\">Pret</a>
+        echo "\">Prêt</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t<a class=\"nav-link\" href=\"#\">Pricing</a>
@@ -108,7 +108,7 @@ class __TwigTemplate_e5f69f8edc58cf68a0dc36c0020a1168 extends Template
 \t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('app_materiel_index') }}\">Materiel</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('app_pret_index')}}\">Pret</a>
+\t\t\t\t\t<a class=\"nav-link\" href=\"{{ path('app_pret_index')}}\">Prêt</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t<a class=\"nav-link\" href=\"#\">Pricing</a>
@@ -120,6 +120,6 @@ class __TwigTemplate_e5f69f8edc58cf68a0dc36c0020a1168 extends Template
 \t\t</div>
 \t</div>
 </nav>
-", "navbar.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\navbar.html.twig");
+", "navbar.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\navbar.html.twig");
     }
 }

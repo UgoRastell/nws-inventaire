@@ -197,6 +197,6 @@ class __TwigTemplate_54a997e90047879df8e228ff4a23360c extends Template
 \t</section>
 
 {% endblock %}
-", "security/register.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\security\\register.html.twig");
+", "security/register.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\security\\register.html.twig");
     }
 }

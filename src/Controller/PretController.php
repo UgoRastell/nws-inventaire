@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 #[Route('/pret')]
 class PretController extends AbstractController
@@ -81,6 +82,10 @@ class PretController extends AbstractController
         $pretId = $request->attributes->get('id');
 
         $pret = $pretRepository->findOneWithUser($pretId);
+
+        if (!$pret) {
+            throw new NotFoundHttpException('Pret not found');
+        }
 
         return $this->render('pret/show.html.twig', [
             'pret' => $pret,

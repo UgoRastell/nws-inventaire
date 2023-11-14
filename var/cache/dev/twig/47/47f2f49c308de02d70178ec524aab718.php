@@ -140,6 +140,6 @@ class __TwigTemplate_79f4807d459adff9cb4b8a7427aa7448 extends Template
 
     {{ include('pret/_delete_form.html.twig') }}
 {% endblock %}
-", "pret/edit.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\pret\\edit.html.twig");
+", "pret/edit.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\pret\\edit.html.twig");
     }
 }

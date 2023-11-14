@@ -231,6 +231,6 @@ class __TwigTemplate_59c12133e92baaff67e53920df43fc34 extends Template
 
 \t<a href=\"{{ path('app_pret_new') }}\" class=\"btn btn-primary\">Create new</a>
 {% endblock %}
-", "pret/index.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\pret\\index.html.twig");
+", "pret/index.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\pret\\index.html.twig");
     }
 }

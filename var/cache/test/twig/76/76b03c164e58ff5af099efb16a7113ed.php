@@ -133,6 +133,6 @@ class __TwigTemplate_a325c9885f1251b804ad0783b5b87b2a extends Template
 
     <a href=\"{{ path('app_materiel_index') }}\">back to list</a>
 {% endblock %}
-", "materiel/new.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\materiel\\new.html.twig");
+", "materiel/new.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\materiel\\new.html.twig");
     }
 }

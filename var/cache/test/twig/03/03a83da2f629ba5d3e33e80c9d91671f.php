@@ -79,6 +79,6 @@ class __TwigTemplate_a3b10130a714a41bfd5e32942d398f8f extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ materiel.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "materiel/_delete_form.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\materiel\\_delete_form.html.twig");
+", "materiel/_delete_form.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\materiel\\_delete_form.html.twig");
     }
 }

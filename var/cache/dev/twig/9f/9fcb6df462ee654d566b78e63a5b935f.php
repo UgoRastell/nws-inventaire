@@ -79,6 +79,6 @@ class __TwigTemplate_9fe058a2358976424ffc2e3839ee80ea extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ pret.id) }}\">
     <button class=\"btn\">Delete</button>
 </form>
-", "pret/_delete_form.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\pret\\_delete_form.html.twig");
+", "pret/_delete_form.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\pret\\_delete_form.html.twig");
     }
 }

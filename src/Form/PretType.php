@@ -20,16 +20,23 @@ class PretType extends AbstractType
                 'widget' => 'single_text',
                 'html5' => true,
             ])
-            //->add('date_rendu_user')
             ->add('statut')
             ->add('materiel_emprunte', EntityType::class, [
                 'class' => Materiel::class,
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('m')
-                        ->where('m.quantity > 0'); // Exclude materials with zero quantity
+                        ->where('m.quantity > 0');
                 },
             ])
-            ->add('user_emprunteur');
+            ->add('user_emprunteur', EntityType::class, [
+                'class' => 'App\Entity\User', // Replace with the correct namespace for your User entity
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                        ->orderBy('u.email', 'ASC'); // Adjust this based on your user entity structure
+                },
+                'choice_label' => 'email', // Replace 'nom' with the property you want to display in the dropdown
+                'required' => true,
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

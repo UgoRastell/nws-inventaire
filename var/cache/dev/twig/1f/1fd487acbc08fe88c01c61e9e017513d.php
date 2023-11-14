@@ -216,6 +216,6 @@ class __TwigTemplate_eefa191c0b67aaeccb896b45b15fa93a extends Template
 
     {{ include('materiel/_delete_form.html.twig') }}
 {% endblock %}
-", "materiel/show.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\materiel\\show.html.twig");
+", "materiel/show.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\materiel\\show.html.twig");
     }
 }

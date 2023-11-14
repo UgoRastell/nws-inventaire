@@ -228,6 +228,6 @@ class __TwigTemplate_fb527b676484d28a4b774a8ddc9892e3 extends Template
 \t\t<p>No record found</p>
 \t{% endif %}
 {% endblock %}
-", "pret/show.html.twig", "C:\\Users\\ugora\\Desktop\\symf\\nws-inventaire\\templates\\pret\\show.html.twig");
+", "pret/show.html.twig", "C:\\Users\\ugora\\Desktop\\nws-inventaire\\templates\\pret\\show.html.twig");
     }
 }
